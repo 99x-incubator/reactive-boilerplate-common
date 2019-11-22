@@ -5,8 +5,7 @@ export const warn ='warn';
 export const info ='success';
 export const error ='error';
 
-
-export class AlertHelper{
+export class AlertHelper {
   static instance;
   static emitter;
 
@@ -17,6 +16,7 @@ export class AlertHelper{
   getEmitter(){
     return this.emitter;
   }
+
   static getInstance(){
     if(this.instance == null){
       this.instance = new AlertHelper();
@@ -27,7 +27,6 @@ export class AlertHelper{
   handler(type,message) {
      this.emitter.emit('alert', { type: type, message: message });  
   }
-  
   
 }
 
